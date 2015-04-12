@@ -1,4 +1,7 @@
-#一. 可执行文件的创建——预处理、编译和链接
+
+紧跟老师步伐，这不仅仅是教程笔记。
+
+#一. 可执行文件的创建
 
 #基础
 
@@ -37,7 +40,7 @@ abi 二进制兼容，已经适应某一计算机架构
 ##ELF文件格式
 
 可以参考ELF文件格式 ：（中文翻译版）,以下是文件格式的概要图（by morphad)
-[![](elf.jpg )](http://blog.csdn.net/morphad/article/details/8967000)
+[![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/elf.jpg )](http://blog.csdn.net/morphad/article/details/8967000)
 
 
  elf共分为三种:
@@ -56,7 +59,7 @@ shiyanlou:Code/ $ readelf -h hello
 
 ###静态elf 的进程地址空间
 
-![](process_address.png " ")
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/process_address.png " ")
 
 感谢:程序员修养书中图，page 167
 
@@ -141,7 +144,7 @@ int main(int argc, char * argv[])
 ```
 
 - 命令行参数和环境串都放在用户态堆栈中
-![](week7_args.png "" )
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/week7_args.png "" )
   
   - what:你会看到参数块/环境块的指针
   - who did it: shell->execve->sys_execve在程序初始化的时候把以上环境搭建好的
@@ -403,13 +406,13 @@ start_thread(regs,elf_entry,bprm->p);
 ```
 ##整体流程图
 谢谢ma89481508的精心制作，访问原帖请点击图片
-[![](exec_flow.png "" )](http://blog.csdn.net/ma89481508/article/details/8996436)
+[![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/exec_flow.png "" )](http://blog.csdn.net/ma89481508/article/details/8996436)
 
 图中有轻重的说明了execve--> do——execve --> search_binary_handle --> load_binary流程
 
 ##最后奉上一张堆栈变化图
 谢谢morphad的精心制作，访问原帖请点击图片
-[![](exec_stack.png "")](http://blog.csdn.net/morphad/article/details/8967000)
+[![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/exec_stack.png "")](http://blog.csdn.net/morphad/article/details/8967000)
 
 
 图中对于参数块和环境块如何被传到新进程是很好的说明
@@ -499,13 +502,13 @@ exec*函数对应的系统调用处理过程
 ``
 # 其他
 thanks haroopad ;chrome based opensource editor
-to find qt based opensource editor
-共享库代码
-(week7_args.png "" "width:30px;float:right")恢复大小
+later :共享库代码
+for compare convenient: (week7_args.png "" "width:30px;float:right")恢复大小
 
-fork vs execve
-fs/exec.c 文件 符号表
-番茄计时：1.5小时 完成 section 1 2,  4小时 完成剩余section
+later :fork vs execve fs/exec.c 文件 符号表
+time: 番茄计时：1.5小时 完成 section 1 2,  4小时 完成剩余section
+tips :the haroopad is so cool ,and opensource
+tips :use photo ,plase add prefix https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/
 #参考
 http://blog.csdn.net/ma89481508/article/details/8996436
 http://blog.csdn.net/morphad/article/details/8967000
