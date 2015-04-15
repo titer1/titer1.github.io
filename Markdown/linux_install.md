@@ -229,12 +229,12 @@ find . -perm /u=x,g=x,o=x
 
 
 ##example find object
-![](find_obj.png "")
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/find_obj.png "")
 smile detect
-![](0415_smile_detect.png "")
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/0415_smile_detect.png "")
 
 face detect
-![](0415_face_detect.png "")
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/0415_face_detect.png "")
 
 
 ### 动态的 delaunay 三角+ voronoi分割
@@ -242,25 +242,25 @@ face detect
 基础参考：
 http://blog.csdn.net/berguiliu/article/details/25003055
 
-![](0415_delaunay.png "")
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/0415_delaunay.png "")
 ```
 This program demostrates iterative construction of
 delaunay triangulation and voronoi tesselation.
 It draws a random set of points in an image and then delaunay triangulates them.
 ```
 
-![](0415_mser.png "")
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/0415_mser.png "")
 
-![](0415_latentsvm.png "")
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/0415_latentsvm.png "")
 
-![](0415_contours.png "")
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/0415_contours.png "")
 
-![](0415_pyramid.png "")
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/0415_pyramid.png "")
 
 ###有趣 morphology
 基础:
 http://blog.csdn.net/poem_qianmo/article/details/24599073
-![](0415_morphology.png "")
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/0415_morphology.png "")
 
 
 
@@ -357,7 +357,6 @@ http://blog.csdn.net/surgewong/article/details/39078251
 
 #get sample
 form git or pan
-
 
 ```
 error 1:	error C1083: 无法打开包括文件:“opencv2/opencv.hpp”: 
