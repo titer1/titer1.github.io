@@ -261,7 +261,7 @@ It draws a random set of points in an image and then delaunay triangulates them.
 基础:
 http://blog.csdn.net/poem_qianmo/article/details/24599073
 ![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/0415_morphology.png "")
-
+ 
 
 
 
