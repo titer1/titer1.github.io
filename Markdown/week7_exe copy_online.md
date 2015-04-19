@@ -225,7 +225,7 @@ Calling DynamicalLoadingLibApi() function of libdllibexample.so!
 This is a Dynamical Loading libary!
 ```
 
-![](0419_run.png "")
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/0419_run.png "")
 成功的截图，没有出现一种瑕疵啊，o(^▽^)o
 
 
@@ -479,10 +479,10 @@ start_thread(regs,elf_entry,bprm->p);
 差异关键在main函数
 
 ###比较库的实现
-![](0419_diff_cpp.png "")
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/0419_diff_cpp.png "")
 没有功能差异，右侧仅仅多个额外的宏定义
 ###比较库头文件
-![](0419_diff_head.png "")
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/0419_diff_head.png "")
 同上
 
 
@@ -617,7 +617,7 @@ http://blog.csdn.net/morphad/article/details/8967000
 ##广告时间
 欢迎大家到我的博客留言，希望成为内核入门学习的干货店。
 http://blog.csdn.net/titer1/
-![](cowtux.png "")
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/cowtux.png "")
 
 
 #好玩的推荐
