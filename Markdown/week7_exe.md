@@ -1,5 +1,10 @@
 
 紧跟老师步伐，这不仅仅是教程笔记。
+特色：
+- 加入动态演示，去验证exec过程
+- 加入自己理解的数据结构图示（自创/网络引用）
+
+动静结合学习 linux可执行文件
 
 #一. 可执行文件的创建
 
@@ -181,6 +186,48 @@ Calling DynamicalLoadingLibApi() function of libdllibexample.so!
 This is a Dynamical Loading libary!
 ```
 
+###我的动手实践之 两种动态库
+- 编译库
+```
+gcc -shared shlibexample.c -o libshlibexample.so -m32
+gcc -shared dllibexample.c -o libdllibexample.so -m32
+```
+和常规的可执行文件比较，这里注意的就是要加上 -shared标志
+
+- 编译Main
+```
+gcc main.c -o main -L/media/sda_m/SharedLibDynamicLink -lshlibexample -ldl -m32
+```
+额外需要注意的就是这里library路径需要指明当前的，原本偷懒来个 -L. ,这样是不可以的
+出现典型的找不到动态库的错误
+```
+#错误情形
+/usr/bin/ld: cannot find -lshlibexample
+collect2: ld returned 1 exit status
+```
+- 设置动态库查找的位置
+```
+export LD_LIBRARY_PATH=$PWD
+```
+如果不设置，将会报找不到动态库
+```
+#错误情形
+./main: error while loading shared libraries: libshlibexample.so: cannot open shared object file: No such file or directory
+```
+- 最后一击
+可以看到我们成功的调用 动态库 和 运行时动态库的 函数
+```
+noya@noya-VirtualBox:/media/sda_m/SharedLibDynamicLink$ ./main
+This is a Main program!
+Calling SharedLibApi() function of libshlibexample.so!
+This is a shared libary!
+Calling DynamicalLoadingLibApi() function of libdllibexample.so!
+This is a Dynamical Loading libary!
+```
+
+![](0419_run.png "")
+成功的截图，没有出现一种瑕疵啊，o(^▽^)o
+
 
 #三. 可执行程序的装载
 ## shell相关
@@ -231,6 +278,10 @@ Linux内核是如何支持多种不同的可执行文件格式的？
 2200    register_binfmt(&elf_format);#注册
 2201    return 0;
 2202}
+
+```
+readelf -h hello
+看到hello起始地址，漂亮！
 ```
 
 
@@ -259,6 +310,10 @@ Linux内核是如何支持多种不同的可执行文件格式的？
 ```
 小结 codes flows: load_elf_binary --> start_thread ;//修改 ip ,sp
 ```
+
+
+
+
 
 #四. 动态链接的过程
 动态链接的过程内核做了什么？可执行文件依赖的动态链接库（共享库）是由谁负责加载以及如何递归加载的？
@@ -419,6 +474,18 @@ start_thread(regs,elf_entry,bprm->p);
 
 
 #六. 实践 gdb跟踪sys_execve
+##gcc 实战
+两种so文件比较起来就没有差别！
+差异关键在main函数
+
+###比较库的实现
+![](0419_diff_cpp.png "")
+没有功能差异，右侧仅仅多个额外的宏定义
+###比较库头文件
+![](0419_diff_head.png "")
+同上
+
+
 ## 调试前的准备
 
 ```
@@ -464,10 +531,43 @@ gdb中：     po new_ip #查看内容
 对比程序入口地址和 new_ip 指向地址一致！
 new_ip对于静态链接程序来说，就是真实的地址。
 
+这里的内容可以看到ip/sp被赋值，可以详细跟踪
 
+## 动手实践之
+断点信息
+```
+#more:用户空间启动位置
+b sys_execve
+b load_elf_binary
+b start_thread
+#more:返回用户空间的位置
 
+```
+- load_elf_binary triggered by init
+- now execute the command "exec"
+- now trigger the sys_execve
+- next ,we will start_thread，we will find find new_ip
+```
+千言万语，我们来看我只做的gdb调试exec视频吧，
+这次主要是验证exec的流程
 
+'''
+#鉴于gif文件太大，8M!待有时间，我找到合适的gif修改文件会适度瘦身。
+需要访问的同学，可以自行点击链接查看
+(gdb_exec.gif "")
+'''
+#总结
+1）熟悉exec,熟悉两种装载动态库的方式
+2）gdb跟踪实战验证了exec的流程
+3）可执行程序的起始位置，简言之就是new_ip指向的位置
+4）execve返回后，“新的进程上下文已经安装好”，新的可执行程序在老进程“一觉睡醒”后开始执行
+5）静态链接的可执行程序，execve中修订的ip地址是新进程映射到进程空间的地址。
+；动态链接的可执行程序，execve中修订的ip地址是动态连接器的程序起点
 
+针对话题，Linux内核装载和启动一个可执行程序
+浅看来，是系统调用的sys_exec的实现
+深究下来，涵盖了elf格式解析，解析新进程启动地址等等。
+内核很大，这仅仅是一个阶段总结。
 
 
 #七. 参考 本周要求
@@ -482,7 +582,7 @@ new_ip对于静态链接程序来说，就是真实的地址。
 为什么execve系统调用返回后新的可执行程序能顺利执行？
 对于静态链接的可执行程序和动态链接的可执行程序execve系统调用返回时会有什么不同？
  ```
-（重点）
+（重点） where start ,where end-
  ```
 
 - 根据本周所学知识分析
@@ -512,3 +612,17 @@ tips :use photo ,plase add prefix https://code.csdn.net/titer1/pat_aha/blob/mast
 #参考
 http://blog.csdn.net/ma89481508/article/details/8996436
 http://blog.csdn.net/morphad/article/details/8967000
+
+##广告时间
+欢迎大家到我的博客留言，希望成为内核入门学习的干货店。
+http://blog.csdn.net/titer1/
+![](cowtux.png "")
+
+
+#好玩的推荐
+谷阿莫
+ objdump –S test.o. 输出C源代码和反汇编出来的指令对照的格式.
+shift+G 文件尾巴 vim tips
+zoomit, for presentation so cool
+timerstopwatch,for presentation
+
