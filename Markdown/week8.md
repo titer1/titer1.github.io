@@ -167,7 +167,14 @@ Task2 Data/Stack   Task2 Code        Kernel Code  Kernel Data/Stack
 	- eip 再切换
 	- 利用push eip +call 起到了类似的call 作用，但是灵活修改了eip 。
 	/*这点很牛*/
+
+
+
 ##代码情景分析+gdb动手实践
+欢迎大家到我的博客留言，希望成为内核入门学习的干货店。
+http://blog.csdn.net/titer1/
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/cowtux.png "")
+
 ```
 #define switch_to(prev, next, last)                                     \
 do {                                                                    \
@@ -210,10 +217,7 @@ do {                                                                    \
 } while (0)
 ```
 
-```
-欢迎大家到我的博客留言，希望成为内核入门学习的干货店。
-http://blog.csdn.net/titer1/
-```
+
 
 仅仅演示swith_to堆栈变化，
 要知道哪些地方典型的调用schedule,待下一次展开
@@ -223,6 +227,8 @@ http://blog.csdn.net/titer1/
 b kernel/sched/core.c:2373
 ```
 
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/demo_sched.gif "")
+
 感谢hchunhui供图，
 ```
 他的博客可以从这里访问：
@@ -230,17 +236,17 @@ http://home.ustc.edu.cn/~hchunhui/linux_sched.html
 ```
 
 ### 1 switch_to之前
-![](sched_1.png)
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/sched_1.png)
 ###2 切换堆栈之前
-![](sched_2.png)
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/sched_2.png)
 ###3 切换堆栈之后
-![](sched_3.png)
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/sched_3.png)
 ###4 push和Jump操作之后
-![](sched_4.png)
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/sched_4.png)
 ###5 _switch_to汇编返回
-![](sched_5.png)
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/sched_5.png)
 ###6 switch_to完成
-![](sched_6.png)
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/sched_6.png)
 
 
 
