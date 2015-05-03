@@ -32,7 +32,7 @@ MOOC Linux内核之旅小结
 
 ##也上进过
   先上图(截至到4月28日），论坛里水过不少，竟然收获了27个赞，谢谢大家。
-![](0428_rank.jpg)
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/0428_rank.jpg)
   此外，收获到3个置顶，(￣▽￣)"，谢谢老师和“慕课君的萌宠”。
   
   话说的我的博客让不少人的浏览器崩掉了，真的不好意思啊！8M的动态演示图真的是浏览器的大杀器，最近几期的演示都放的是超链接，大家完全不用担心啦。
@@ -60,7 +60,7 @@ MOOC Linux内核之旅小结
 当前这里的专栏把上面所有内容都已经收录
 - [linux内核入门实践](http://blog.csdn.net/column/details/kernel-from-scratch.html)
 
-![](cowtux.png)
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/cowtux.png)
 
 空说无意义，来真的学习计划吧
 
