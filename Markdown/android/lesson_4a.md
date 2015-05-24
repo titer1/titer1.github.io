@@ -21,7 +21,7 @@ sql表长得像这样
   ![](4a_17_sql.jpg)
 - more about data stroage
 
-#overview arch 
+#overview arch 反复
 ```
 lesson 4a 18
 ```

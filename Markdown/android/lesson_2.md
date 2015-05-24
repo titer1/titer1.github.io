@@ -2,7 +2,7 @@
 
 这里我们从2-17开始，至此我们的demo可以显示List,但是网络通信的代码放在主线程里，所以我们需要改进他。
 
-##async is not optional
+##refresh .. async is not optional
 ![](2_20_asysnc_issue.jpg)
 
 当activity组件被某些东西终止，比如旋转屏幕。data传输会受影响
@@ -164,9 +164,9 @@ catherine 准备大睡一场啊，lesson3见
  
 
 
-
-
-
+DDDDDDiii
+dthis 
+![](temp.jpg)
 
 
 
