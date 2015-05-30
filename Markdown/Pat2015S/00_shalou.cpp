@@ -40,8 +40,10 @@ int f15s_shalou(int y, char *ch)
 			printf(" ");
 		for( j=i; j>0; j-- )
 			printf("%c",*ch);
+
 		for( k =0; k< (mIx-i) /2; k++) // ask it ????
 			printf(" ");
+
 
 		printf("\n");
 
@@ -84,12 +86,14 @@ int main(int argc, char argv[])
 	int mIinput;
 	char mCinput;
 
+scanf("%d %c",&mIinput,&mCinput);//data,and char
 
-#if 0 
-	f15s_shalou(1000,'*');//
+#if 1
+	//f15s_shalou(1000,'*');//
+	f15s_shalou(mIinput,&mCinput);//	
 #else
 
-	scanf("%d %c",&mIinput,&mCinput);
+
 
 	for(int i=0; i <mIinput;i++)
 	{
@@ -109,4 +113,15 @@ int main(int argc, char argv[])
 	//leave to do .clean and beauty my codes 
 	//已经达到目标，give up
 
+	//update:没有匹配输出 .输出调试情形在标准情形下
+	//还有每行的空格算不
 }
+
+/*
+
+测试点	结果	用时(ms)	内存(kB)	得分/满分
+0	格式错误	1	256	0/12
+1	答案错误	1	256	0/2
+2	答案正确	1	184	2/2
+3	格式错误	1	312	0/4
+*/

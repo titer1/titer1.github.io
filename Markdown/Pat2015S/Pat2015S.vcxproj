@@ -82,6 +82,8 @@
     <ClCompile Include="00_sushudui.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="00_shalou.cpp" />
+    <ClCompile Include="template_code.cpp" />
+    <ClCompile Include="utilites.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
