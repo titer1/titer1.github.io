@@ -33,5 +33,11 @@
     <ClCompile Include="00_num_permutation.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="00_max_sum_value.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="00_max_seq_sum.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

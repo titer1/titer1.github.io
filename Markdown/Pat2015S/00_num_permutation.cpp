@@ -166,6 +166,7 @@ Then in the next line, print the doubled number.
 Sample Input:
 1234567899
 Sample Output:
-Yes2469135798
+Yes
+2469135798
 
 */

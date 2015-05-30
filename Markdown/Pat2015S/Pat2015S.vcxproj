@@ -76,6 +76,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="00_array_rightshift.cpp" />
+    <ClCompile Include="00_max_seq_sum.cpp" />
+    <ClCompile Include="00_max_sum_value.cpp" />
     <ClCompile Include="00_num_permutation.cpp" />
     <ClCompile Include="00_sushudui.cpp" />
     <ClCompile Include="main.cpp" />
