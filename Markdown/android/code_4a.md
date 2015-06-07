@@ -1,3 +1,13 @@
+#udacity android 实践笔记: lesson 4 part a
+-------
+作者：干货店打杂的 /titer1 /Archimedes
+出处：https://code.csdn.net/titer1
+联系：1307316一九六八(短信最佳)
+声明：本文采用以下协议进行授权： 自由转载-非商用-非衍生-保持署名|[Creative Commons BY-NC-ND 3.0](http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh) ，转载请注明作者及出处。
+tips:https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/android/
+
+-------
+
 ```
 this is weekend time
 last time ,we have learn form the video
@@ -32,12 +42,12 @@ content provider
 activity
 
 #4.01 life cycle
-![](android_application_life_cycle.gif)
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/android/android_application_life_cycle.gif)
 
 
-![](c4a_lifeCycle.jpg)
-![](c4a_disconect.jpg)
-![](c4a_restore.jpg)
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/android/c4a_lifeCycle.jpg)
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/android/c4a_disconect.jpg)
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/android/c4a_restore.jpg)
 
 ```
 以上介绍了 声明周期
@@ -57,7 +67,7 @@ activity
 所有的activity life cycle hanlders
 ```
 #overviw 图
-![](c4a_overview.jpg)
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/android/c4a_overview.jpg)
 - contract
 - db builder
 - content provider 四大组件之一
@@ -66,7 +76,7 @@ activity
 
 #4.02 第四章最基础的代码框架
 
-![](c4a_2_diff.jpg)
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/android/c4a_2_diff.jpg)
 - 完整的测试框架
 - 添加了 location weather的contract
 - 添加了 location weather相关的 sql builder
@@ -115,19 +125,16 @@ public class WeatherDbHelper extends SQLiteOpenHelper {
 
 ###使能数据库创建测试程序 testCreateDb
 
-程序略
+程序介绍
 
 ```
-
-    /*
         Students: Uncomment this test once you've written the code to create the Location
         table.  Note that you will have to have chosen the same column names that I did in my solution for this test to compile, so if you haven't yet done that, this is
         a good time to change your column names to match mine.
 
         Note that this only tests that the Location table has the correct columns, since we
         give you the code for the weather table.  This test does not look at the
-     */
-
+ 
 ```
 
 
@@ -267,7 +274,7 @@ public class WeatherDbHelper extends SQLiteOpenHelper {
     }
 ```
 
-#!! 效果截图 等待
+#!! todo 效果截图 
 这处 等待网络 联通后，应该有 具体的效果图展示，
 初步看到这里有若干的assert
 
@@ -311,7 +318,7 @@ public class WeatherDbHelper extends SQLiteOpenHelper {
 #小憩时间
 至此，逻辑正确的话，两个数据表格都测到测试
 未来目标是 4.24..还有很多。
-![](c4a_testdb_over.jpg)
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/android/c4a_testdb_over.jpg)
 - 给出初步的 创建 weather表的表框架
 - 创建 location 表
 - 填充 test location 
@@ -319,6 +326,9 @@ public class WeatherDbHelper extends SQLiteOpenHelper {
 
 
 一句话 ，期中 4.06是一个 小的 里程碑
+
+
+
 
 
 

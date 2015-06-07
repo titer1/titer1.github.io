@@ -1,39 +1,49 @@
-#udacity android lesson 2
+#udacity android lesson 2 学习笔记
+
+-------
+作者：干货店打杂的 /titer1 /Archimedes
+出处：https://code.csdn.net/titer1
+联系：1307316一九六八
+声明：本文采用以下协议进行授权： 自由转载-非商用-非衍生-保持署名|[Creative Commons BY-NC-ND 3.0](http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh) ，转载请注明作者及出处。
+tips:https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/android/
+
+-------
+
 
 这里我们从2-17开始，至此我们的demo可以显示List,但是网络通信的代码放在主线程里，所以我们需要改进他。
 
 ##refresh .. async is not optional
-![](2_20_asysnc_issue.jpg)
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/android/2_20_asysnc_issue.jpg)
 
 当activity组件被某些东西终止，比如旋转屏幕。data传输会受影响
 
 ##todo activity声明周期
 
 ##better way
- ![](2_22_syncAdapter.jpg)
+ ![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/android/2_22_syncAdapter.jpg)
  
 - not use refresh button
 - not effect by the activity lifecycle
 
 ##menu +buttons
 原理上是
-![](2_22_menu.jpg)
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/android/2_22_menu.jpg)
 代码上体现，简言之，就是更新Menu.xml下面的item内容
 
 此后，考虑refresh button,修改位置是layout相关的xml.
 运行demo后，button并没有显示，创建button的代码当前还没有更新
 
 
-![](2_26_fragment.jpg)
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/android/2_26_fragment.jpg)
 如果button没有显示，请check图中给出api
 
-![](2_26_refresh_codes.jpg)
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/android/2_26_refresh_codes.jpg)
 上面给出初始化refresh button和button响应的相关代码
 
 ##不完美，继续改进
 直接运行以上代码，crash
 
-![](2_28_reason.jpg)
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/android/2_28_reason.jpg)
 原因是权限问题（没有申请 internet权限）,catherine非常有趣的制造的错误，同时也交给我们如何使用logcat来诊断app的错误，真是授人以渔！
 
 
@@ -45,7 +55,7 @@
 - 如用intent启动应用（如相机）
 - 共享数据的方法：例如使用intent和content provider 架构应用程序沙盒
 
-![](2_31_need_permission_gps.jpg)
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/android/2_31_need_permission_gps.jpg)
  
 ###internet 权限 管制
 用户可以动态拒绝的权限的赋予。
@@ -66,10 +76,10 @@ catherine 接着在代码层次讲解了 JSON数据的调用，并在命令行�
 - 检测方法，logcat
 
 ####带参数的fetchweathertask 
-![](2_35_post_param_code.jpg)
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/android/2_35_post_param_code.jpg)
 
 往下看看urlbuilder的真面目，还有调试的接口吧
-![](2_35_post_param_code_urlbuilder.jpg)
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/android/2_35_post_param_code_urlbuilder.jpg)
 
 ###json解析
 ####json属性
@@ -78,7 +88,7 @@ catherine 接着在代码层次讲解了 JSON数据的调用，并在命令行�
 - max tempature ?
 有趣的发现，udacity网站竟然还有在线的java json练习
 
-![](2_39_jsonCode.jpg)
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/android/2_39_jsonCode.jpg)
 一种典型树状数据结构的解析
 
 ####！！ jason parsing 
@@ -92,7 +102,7 @@ helper method
 几乎所有的方法都在  FetchWeatherTask的doInBackground中调用
 
 当功能正确，我们将会得到以下输出
-![](2_40_parse_result.jpg)
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/android/2_40_parse_result.jpg)
 
 ###update the adpater + UI
 this is the 2-42 lesson and 2-43 's content.
@@ -121,7 +131,7 @@ hotkey is "ctrl+o" ,it can give method of parent class
 
 ####架构图 回忆
 数据更新导致view更新的流程
-![](2_44_adpternotify_internal.jpg)
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/android/2_44_adpternotify_internal.jpg)
 
 话说 adapter.nofitfyDatasetChanged()是被自动调用，我们看看真相。
 
@@ -145,11 +155,11 @@ tips:android frame code是个宝箱！
 ##take a screenshot
 可以利用android debug monitor的自带功能，帮助开发者来标示进度
 
-![](2_45_sreenCap.jpg)
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/android/2_45_sreenCap.jpg)
 
 至此，refresh功能完工，
 还是给catherine爆张照片出来吧，好欢乐的程序媛
-![](2_46_done.jpg)
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/android/2_46_done.jpg)
 catherine 准备大睡一场啊，lesson3见
 
 ##其他
@@ -164,9 +174,7 @@ catherine 准备大睡一场啊，lesson3见
  
 
 
-DDDDDDiii
-dthis 
-![](temp.jpg)
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/android/temp.jpg)
 
 
 

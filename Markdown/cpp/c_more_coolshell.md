@@ -1,7 +1,8 @@
 深入c学习笔记
-
-作者：titer1
+-------
+作者：干货店打杂的 /titer1 /Archimedes
 出处：https://code.csdn.net/titer1
+联系：1307316一九六八
 声明：本文采用以下协议进行授权： 自由转载-非商用-非衍生-保持署名|[Creative Commons BY-NC-ND 3.0](http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh) ，转载请注明作者及出处。
 tips:https://code.csdn.net/titer1/pat_aha/blob/master/Markdown
 

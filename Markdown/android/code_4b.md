@@ -1,12 +1,24 @@
 
+#udacity android 实践笔记: lesson 4 part b
+-------
+作者：干货店打杂的 /titer1 /Archimedes
+出处：https://code.csdn.net/titer1
+联系：1307316一九六八(短信最佳)
+声明：本文采用以下协议进行授权： 自由转载-非商用-非衍生-保持署名|[Creative Commons BY-NC-ND 3.0](http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh) ，转载请注明作者及出处。
+tips:https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/android/
+
+-------
+摘要
+
 - 完全展示content provider添加的过程
 - 动态展示单元测试的过程
+	动图出没喔！o(^▽^)o，动图在最后
 
 #overviw 图
 
 还是老图，(create / insert /query)
 
-![](c4a_overview.jpg)
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/android/c4a_overview.jpg)
 
 下面 我们开始 content provider的学习
 
@@ -19,10 +31,10 @@ broadcast provider
 actvity 
 ```
 #本章 overview
-![](4b_uri_use.jpg)
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/android/4b_uri_use.jpg)
 
 #4.07 init code for content provider
-![](c4a_contentStart.jpg)
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/android/c4a_contentStart.jpg)
 - 测试打桩函数就占了大半
 - 然后传统的函数里面修改了 weatherContrace
 	- 增加了 weatherProvider
@@ -249,12 +261,12 @@ android 在debug模式下，有很有趣的话题在里面，比如变量值的�
 
 
 #test ok 单元测试的方法 && testPractise
-![](c4a_test_ok_set.jpg)
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/android/c4a_test_ok_set.jpg)
 并且 我没有选右键触发，而是直接 run ( shift f10)
 （4a-28 ）里面单元测试的方法，完全可以复现
 
 
-![](show_unit_test.gif)
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/android/show_unit_test.gif)
 - 展现运行的配置
 - 展示出错情形如何定位错误
 - 展示正常情况
@@ -343,9 +355,9 @@ from 4.06 -4.10 (github)
 
 # 下一天 复习
 解释 前面 为什么 不是 全部的uri都被命中
-![](c4b_uri_works.jpg)
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/android/c4b_uri_works.jpg)
 
-![](c4b_uri_works_more.jpg)
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/android/c4b_uri_works_more.jpg)
 
 再看 weather provider 和 testProvider的演示
 作者是逐一功能的enable,逐一测试。逐渐深入
@@ -354,7 +366,7 @@ from 4.06 -4.10 (github)
 都含有uri matcher的筛选
 
 新近发现 可以 查看 每一个测试的内容：
-![](c4b_uri_test.jpg)
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/android/c4b_uri_test.jpg)
 
 video 4b-24 是个阶段总结
 
@@ -383,15 +395,20 @@ video 4b-24 是个阶段总结
 (网络收报后的处理例程)
 
 看到凡是使用了getContentResolver的地方，都是利用了contentprovider的地方，
-![](c4b_resolver.jpg)
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/android/c4b_resolver.jpg)
 
 #最后
 为了ui theread 更加流畅，引出Loader
 `至此，我们的video 来到4b的借书，代码`
 代码范围是：
-![](c4b_code_range.jpg)
+![](https://code.csdn.net/titer1/pat_aha/blob/master/Markdown/android/c4b_code_range.jpg)
 
 
-##附code
+##todo 附code
+
+#小节 
+android 你好 
+android 再见
+呵呵，本博客android暂停更新，如果有兴趣可以短信联系
 
 
